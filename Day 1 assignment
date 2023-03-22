@@ -1,0 +1,96 @@
+Skip to content
+Vigneshvignesh1231
+/
+R-Prog
+assignment day 1
+
+
+1 Consider two vectors, x, y x=c(4,6,5,7,10,9,4,15) y=c(0,10,1,8,2,3,4,1) What is the value of:
+x*y
+2Consider two vectors, a, b
+a=c (1,2,4,5,6) b=c(3,2,4,1,9) What is the value of: cbind(a,b)
+
+SYNTAX (1)
+X <- c(4,6,5,7,10,9,4,15) 
+Y <- c(0,10,1,8,2,3,4,1)
+X*Y
+
+O/P
+X*Y
+[1]  0 60  5 56 20 27 16 15
+   
+SYNTAX (2)
+a <- c(1,2,4,5,6)
+b <- c(3,2,4,1,9)
+cbind(a,b)
+
+O/P
+##      a b
+## [1,] 1 3
+## [2,] 2 2
+## [3,] 4 4
+## [4,] 5 1
+## [5,] 6 9
+
+2) Vector v is c(1,2,3,4) and list x is list(5:8), what is the output of v*x[1]?
+
+SYNTAX
+
+>c(1,2,3,4)
+[1]1 2 3 4
+>list(5:8)
+>c(1,2,3,4)
+[1]1 2 3 4
+>list(5:8)
+[[1]]
+[1]5 6 7 8
+
+O/P
+
+>v*x[1]
+error: object 'v' not found
+>
+
+3)Vector v is c(1,2,3,4) and list x is list(5:8), what is the output of v*x[[1]]
+
+>c(1,2,3,4)
+[1] 1 2 3 4 
+>list(5:8)
+[[1]]
+[1] 5 6 7 8
+
+
+O/P
+
+>v*x[[1]]
+error: object 'v' not found
+
+4. X is the vector c(5,9.2,3,8.51,NA), What is the output of mean(x)?
+
+Syntax
+
+c(5,9.2,3,8.51,NA)
+mean(x)
+>c(5,9.2,3,8.51,NA)
+[1] 5.00 9.2 3.00 8.51 NA
+
+O/P
+
+>mean (x)
+[1] 7.5
+
+
+5. Give a function in R that replaces all missing values of a vector x with the sum of elements
+of that vector?
+
+Syntax 
+
+a<-c(1,2,3,NA,4,5,NA,NA)
+mean_impute<-function(x){
+ifelse(is.na(x),mean(x,na.rm = T),x)
+
+
+O/P
+
+mean_impute(a)
+1 2 3 3 4 5 3 3
