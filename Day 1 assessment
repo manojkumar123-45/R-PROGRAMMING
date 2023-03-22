@@ -1,0 +1,228 @@
+R-Programming-ITA0448/Day 1 Assessement
+211 lines (161 sloc)  4.95 KB
+ assessment day 1
+
+Set I
+
+1. Write a R program to create a vector of a specified type and length. Create
+vector of numeric, complex, logical and character types of length 6 with
+your own examples. print the vector, type, and length.
+
+Syntax 
+
+x = vector("numeric", 5)
+print("Numeric Type:")
+print(x)
+c = vector("complex", 5)
+print("Complex Type:")
+print(c)
+l = vector("logical", 5)
+print("Logical Type:")
+print(l)
+chr = vector("character", 5)
+print("Character Type:")
+print(chr)
+
+O/P
+
+[1] "Numeric Type:"
+[1] 0 0 0 0 0
+[1] "Complex Type:"
+[1] 0+0i 0+0i 0+0i 0+0i 0+0i
+[1] "Logical Type:"
+[1] FALSE FALSE FALSE FALSE FALSE
+[1] "Character Type:"
+[1] "" "" "" "" ""
+
+x = c(10, 20, 30 )
+2. Write a R program to find Sum, Mean and Product of a Vector.
+
+Syntax 
+ 
+x = c(10, 20, 30)
+print("Sum:")
+print(sum(x))
+print("Mean:")
+print(mean(x))  
+print("Product:")
+print(prod(x))
+
+O/P
+
+[1] "Sum:"
+[1] 60
+[1] "Mean:"
+[1] 20
+[1] "Product:"
+[1] 6000    
+
+
+
+3.Write a R program to find the minimum and the maximum of a Vector
+
+Syntax
+
+x = c(10, 20, 30, 25, 9, 26)
+print("Original Vectors:")
+print(x)
+print("Maximum value of the above Vector:")
+print(max(x))
+print("Minimum value of the above Vector:")
+print(min(x))
+
+O/P
+
+[1] "Original Vectors:"
+[1] 10 20 30 25  9 26
+[1] "Maximum value of the above Vector:"
+[1] 30
+[1] "Minimum value of the above Vector:"
+[1] 9         
+
+
+4.Write a R program to find second highest value in a given vector.
+
+Syntax
+
+x = c(10, 20, 30, 20, 20, 25, 9, 26)
+print("Original Vectors:")
+print(x)
+print("Find second highest value in a given vector:")
+l = length(x)
+print(sort(x, partial = l-1)[l-1])
+
+O/P
+
+[1] "Original Vectors:"
+[1] 10 20 30 20 20 25  9 26
+[1] "Find second highest value in a given vector:"
+[1] 26     
+
+5. Write a R program to add a new item g4 = &quot;C++&quot; to a given list.
+Sample list: (g1 = 5:10, g2 = &quot;R Programming&quot;, g3 = &quot;HTML&quot;)
+
+Syntax
+
+list1 = list(g1 = 1:10, g2 = "R Programming", g3 = "HTML")
+print("Original list:")
+print(list1)
+print("Add a new vector to the said list:")
+list1$g4 = "c++"
+print(list1)
+
+
+O/P
+
+[1] "Original list:"
+$g1
+ [1]  1  2  3  4  5  6  7  8  9 10
+
+$g2
+[1] "R Programming"
+
+$g3
+[1] "HTML"
+
+[1] "Add a new vector to the said list:"
+$g1
+ [1]  1  2  3  4  5  6  7  8  9 10
+
+$g2
+[1] "R Programming"
+
+$g3
+[1] "HTML"
+
+$g4
+[1] "c++"
+
+6. Write a R program to extract all elements except the third element of the
+first vector of a given list.
+Sample list: (g1 = 5:10, g2 = &quot;R Programming&quot;, g3 = &quot;HTML&quot;)
+
+Syntax
+
+list1 = list(g1 = 1:10, g2 = "R Programming", g3 = "HTML")
+print("Original list:")
+print(list1)
+print("First vector:")
+print(list1$g1)
+print("First vector without third element:")
+list1$g1 = list1$g1[-3]
+print(list1$g1)
+
+O/P
+
+[1] "Original list:"
+$g1
+ [1]  1  2  3  4  5  6  7  8  9 10
+
+$g2
+[1] "R Programming"
+
+$g3
+[1] "HTML"
+
+[1] "First vector:"
+ [1]  1  2  3  4  5  6  7  8  9 10
+[1] "First vector without third element:"
+[1]  1  2  4  5  6  7  8  9 10   
+
+7. Write a R program to create an ordered factor from data consisting of the
+names of months
+mons_v = c(&quot;March&quot;,&quot;April&quot;,&quot;January&quot;,&quot;November&quot;,&quot;January&quot;,
+&quot;September&quot;,&quot;October&quot;,&quot;September&quot;,&quot;November&quot;,&quot;August&quot;,&quot;February&quot;,
+&quot;January&quot;,&quot;November&quot;,&quot;November&quot;,&quot;February&quot;,&quot;May&quot;,&quot;August&quot;,&quot;Februa
+r
+y&quot;,&quot;July&quot;,&quot;December&quot;,&quot;August&quot;,&quot;August&quot;,&quot;September&quot;,&quot;November&quot;,&quot;Se
+p tember&quot;,&quot;February&quot;,&quot;April&quot;)
+
+
+Syntax
+
+mons_v = c("March","April","January","November","January",
+"September","October","September","November","August","February",
+"January","November","November","February","May","August","February",
+"July","December","August","August","September","November","September",
+"February","April")
+print("Original vector:")
+print(mons_v)
+f = factor(mons_v)
+print("Ordered factors of the said vector:")
+print(f)
+print(table(f))
+
+O/P
+
+[1] "Original vector:"
+ [1] "March"     "April"     "January"   "November"  "January"   "September"
+ [7] "October"   "September" "November"  "August"    "February"  "January"  
+[13] "November"  "November"  "February"  "May"       "August"    "February" 
+[19] "July"      "December"  "August"    "August"    "September" "November" 
+[25] "September" "February"  "April"    
+[1] "Ordered factors of the said vector:"
+ [1] March     April     January   November  January   September October  
+ [8] September November  August    February  January   November  November 
+[15] February  May       August    February  July      December  August   
+[22] August    September November  September February  April    
+11 Levels: April August December February January July March May ... September
+f
+    April    August  December  February   January      July     March       May 
+        2         4         1         4         3         1         1         1 
+ November   October September 
+        5         1         4         
+Footer
+© 2023 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+R-Programming-ITA0448/Day 1 Assessement at main · Vigneshvignesh1231/R-Programming-ITA0448
