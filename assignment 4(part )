@@ -1,0 +1,122 @@
+1.Usethebuilt-indatasetmtcarsforthisassignment.Docarswithbig
+enginesusemorefuelthan
+carswithsmallengines?Youprobablyalreadyhaveananswer,
+buttrytomakeyouranswerprecise.Whatdoestherelationship
+betweenenginesizeandfuel
+efficiencylooklike?Isitpositive?
+Negative?
+
+Sourcescode:
+cor(mtcars$wt,mtcars$mpg)
+data(mtcars)
+plot(mtcars$disp,mtcars$mpg,xlab="Enginesize",ylab="Milesper
+gallon",main="Scatterplotofenginesizevsmpg")
+
+output:
+>summary(mtcars$mpg)
+Min.1stQu.Median Mean3rdQu. Max.
+10.40 15.43 19.20 20.09 22.80 33.90
+
+>summary(mtcars$disp)
+Min.1stQu.Median Mean3rdQu. Max.
+71.10120.80196.30230.72326.00472.00
+
+>cor(mtcars$mpg,mtcars$disp)
+[1]-0.8475514
+2.Howmanyrowsareinmpg?Howmanycolumns?
+sorcecode:
+
+data(mpg)
+
+dim(mpg)
+
+output:
+[1]23411
+
+3.Whichvariablesinmpgarecategorical?Whichvariablesare
+continuous?
+
+sourcecode:
+
+data(mpg)
+
+str(mpg)
+
+output:
+>data(mpg)
+>str(mpg)
+'data.frame': 234obs.of11variables:
+$manufacturer:Factorw/15levels"audi","chevrolet",..:112211212
+
+2...
+$model :Factorw/38levels"4runner4wd",..:23541678910...
+$displ :num 1.81.8222.82.31.81.822.8...
+$year :int1999199920082008199919992008199920082008
+...
+$cyl :factor4444644444...
+$trans :factorautoautomanualmanualautoautomanualauto
+manual...
+$drv :factorffffrfrf44...
+$cty :int21212324211618181620...
+$hwy :int29293130262726252827...
+$fl :factorrrpprrpred...
+$class :factorcompactcompactcompactcompactcompact
+compactcompactcompactcompactcompact...
+
+4.Takethefirstfacetedplotinthissection:
+ggplot(data=mpg)+
+geom_point(mapping=aes(x=displ,y=hwy))+
+facet_wrap(~class,nrow=2)
+Whataretheadvantagestousingfacetinginsteadofthecolour
+aesthetic?
+1.Facetingallowsustocomparetherelationshipbetweentwovariables
+acrossmultiplesubsetsofthedata,whilecolorcanonlydistinguish
+betweenalimitednumberofcategories.
+
+2.Facetingcanbeusedtocreatealargernumberofpanelsthanthe
+numberofcolorsthatcanbeeasilydistinguished,allowingformore
+detailedcomparisons.
+
+3.Facetingcanbemoreaccessibleforcolorblindviewerswhomayhave
+difficultydistinguishingbetweencertaincolors.
+
+Whatarethedisadvantages?Howmightthebalancechangeifyouhada
+largerdataset?
+Disadvantagesofusingfaceting:
+
+Facetingcanmaketheplotmoreclutteredanddifficulttointerpret,
+especiallyiftherearemanypanels.
+
+Facetingrequiresmorespacetodisplaytheplot,whichmaybeanissue
+insituationswherespaceislimited.
+sourcecode:
+
+library(ggplot2)
+
+data(mpg)
+
+ggplot(data=mpg)+
+geom_point(mapping=aes(x=displ,y=hwy))+
+facet_wrap(~class,nrow=2)
+
+5.Whatgeomwouldyouusetodrawalinechart?Aboxplot?A
+histogram?Anareachart?
+Thegeomtouseforeachtypeofchartare:
+
+Linechart:geom_line()
+Boxplot:geom_boxplot()
+Histogram:geom_histogram()
+Areachart:geom_area()
+
+geom_line():Thisgeomisusedtocreatelinecharts,whichshowtrends
+orchangesinavariableovertimeoracrossdifferentgroups.
+
+geom_boxplot():Thisgeomisusedtocreateboxplots,whichdisplaythe
+distributionofavariableacrossdifferentcategoriesorgroups.
+
+geom_histogram():Thisgeomisusedtocreatehistograms,which
+displaythedistributionofavariableasaseriesofverticalbars.
+
+geom_area():Thisgeomisusedtocreateareacharts,whicharesimilar
+tolinechartsbutwiththeareabeneaththelinefilledintoemphasizethe
+magnitudeofthevalues.
